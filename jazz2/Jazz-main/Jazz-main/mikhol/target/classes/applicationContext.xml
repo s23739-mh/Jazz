@@ -3,12 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="RoughRock" class="pj.pjatk.mikhol.RoughRock"/>
+    <bean id="RoughRock" class="pj.pjatk.mikhol.classes.music.RoughRock"/>
 
-    <bean id="SmoothJazz" class="pj.pjatk.mikhol.SmoothJazz">
+    <bean id="SmoothJazz" class="pj.pjatk.mikhol.classes.music.SmoothJazz">
     </bean>
 
-    <bean id="SwiftySwing" class="pj.pjatk.mikhol.SwiftySwing">
+    <bean id="SwiftySwing" class="pj.pjatk.mikhol.classes.music.SwiftySwing">
     </bean>
 
 </beans>

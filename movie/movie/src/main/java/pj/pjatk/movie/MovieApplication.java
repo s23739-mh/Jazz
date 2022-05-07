@@ -1,14 +1,13 @@
-package pj.pjatk.mikhol;
+package pj.pjatk.movie;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-//@ImportResource("classpath:applicationContext.xml")
-public class MikholApplication {
+public class MovieApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MikholApplication.class, args);
+		SpringApplication.run(MovieApplication.class, args);
 	}
 
 }
