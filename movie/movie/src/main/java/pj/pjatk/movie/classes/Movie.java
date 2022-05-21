@@ -1,10 +1,26 @@
 package pj.pjatk.movie.classes;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import javax.persistence.*;
 
-
+@Entity
+@Table(name = "movie")
 public class Movie {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer ID;
+    @Column
+    private String NAME;
+    @Column
+    private int MINIMUM_AGE;
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "ENUM('ACTION', 'FANTASY', 'COMEDY', 'ROMANCE','DEATH")
+    private filmCategory CATEGORY;
+
+    public Movie() {
+
+    }
 
     public Integer getID() {
         return ID;
@@ -14,36 +30,31 @@ public class Movie {
         this.ID = ID;
     }
 
-    public String getName() {
-        return name;
+    public String getNAME() {
+        return NAME;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNAME(String name) {
+        this.NAME = name;
     }
 
-    public int getYear() {
-        return year;
+    public int getMINIMUM_AGE() {
+        return MINIMUM_AGE;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setMINIMUM_AGE(int year) {
+        this.MINIMUM_AGE = year;
     }
 
-    public filmCategory getCategory() {
-        return category;
+    public filmCategory getCATEGORY() {
+        return CATEGORY;
     }
 
-    public void setCategory(filmCategory category) {
-        this.category = category;
+    public void setCATEGORY(filmCategory category) {
+        this.CATEGORY = category;
     }
 
-    private Integer ID;
-    private String name;
-    private int year;
-    private filmCategory category;
-
-    public enum filmCategory{
+    public enum filmCategory {
         ACTION,
         FANTASY,
         COMEDY,
@@ -53,8 +64,8 @@ public class Movie {
 
     public Movie(Integer ID, String name, int year, filmCategory category) {
         this.ID = ID;
-        this.name = name;
-        this.year = year;
-        this.category=category;
+        this.NAME = name;
+        this.MINIMUM_AGE = year;
+        this.CATEGORY = category;
     }
 }
