@@ -42,4 +42,9 @@ public class MovieService {
         return;
     }
 
+    public Movie makeAvailable(Integer id) {
+        Movie movie = movieRepository.getById(id);
+        movie.setAvailable(true);
+        return movieRepository.save(movie);
+    }
 }

@@ -1,5 +1,6 @@
 package pj.pjatk.movie.Controller;
 
+import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -42,5 +43,10 @@ public class MovieController {
     public ResponseEntity<Void> deleteMovie(@PathVariable Integer id){
         movieService.deleteMovie(id);
         return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/movie/makeavailable")
+    public ResponseEntity<Movie> makeAvailable(@PathVariable Integer id){
+        return ResponseEntity.ok(movieService.makeAvailable(id));
     }
 }

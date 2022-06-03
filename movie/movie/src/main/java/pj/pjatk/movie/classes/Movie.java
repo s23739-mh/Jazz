@@ -10,6 +10,9 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Integer ID;
+
+    @Column
+    private boolean isAvailable=false;
     @Column
     private String NAME;
     @Column
@@ -20,6 +23,14 @@ public class Movie {
 
     public Movie() {
 
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
     public Integer getID() {
@@ -62,8 +73,9 @@ public class Movie {
         DEATH
     }
 
-    public Movie(Integer ID, String name, int year, filmCategory category) {
+    public Movie(Integer ID,boolean isAvailable, String name, int year, filmCategory category) {
         this.ID = ID;
+        this.isAvailable=isAvailable;
         this.NAME = name;
         this.MINIMUM_AGE = year;
         this.CATEGORY = category;
